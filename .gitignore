@@ -160,3 +160,5 @@ local.properties
 
 /hibernate-01/target/
 /hibernate-01/hibernate-01.iml
+/hibernate-02/hibernate-02.iml
+/hibernate-02/target/
