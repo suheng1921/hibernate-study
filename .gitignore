@@ -158,3 +158,5 @@ local.properties
 # Typically, this file would be tracked if it contains build/dependency configurations:
 #.project
 
+/hibernate-01/target/
+/hibernate-01/hibernate-01.iml

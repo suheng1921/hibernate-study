@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--数据库连接基本信息-->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="hibernate.connection.username">username</property>
+        <property name="hibernate.connection.password">password</property>
+
+        <!--MySQL方言
+        mysql8 使用org.hibernate.dialect.MySQLInnoDBDialect会报如下错误：
+            org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+            ERROR: Table 'databaseName.tableName' doesn't exist
+        -->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <!-- 执行操作时是否在控制台打印sql -->
+        <property name="show_sql">true</property>
+        <!-- 打印输出的sql是否格式化 -->
+        <property name="format_sql">true</property>
+        <!-- 自动生成数据库表的策略 -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- 指定 对象-关系映射文件 -->
+        <mapping resource="org/nc/bean/News.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>
