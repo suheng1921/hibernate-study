@@ -20,7 +20,13 @@
         <property name="show_sql">true</property>
         <!-- 打印输出的sql是否格式化 -->
         <property name="format_sql">true</property>
-        <!-- 自动生成数据库表的策略 -->
+        <!-- 自动生成数据库表的策略
+        create: 会生根据 .hbm.xml 文件生成数据库表，每次运行都会删除上一次的表，重新生成表，即使新表相对于上次没有任何改变。
+        create-drop: 会生根据 .hbm.xml 文件生成数据库表，但是 SessionFactory 关闭后，表会被自动删除。
+        update: 最常用的属性值。会根据 .hbm.xml 文件生成数据库表，如果 .hbm.xml 文件和数据库中表结构不同，Hibernate会更新数据库表结构，但
+                不会删除已有的行和列。
+        validate: 会和数据库中的表进行比较，如果 .hbm.xml 文件中配置的列在数据库中不存在，则抛出异常。
+        -->
         <property name="hbm2ddl.auto">update</property>
 
         <!-- 指定 对象-关系映射文件 -->
